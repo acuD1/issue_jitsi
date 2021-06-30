@@ -1,0 +1,123 @@
+### Description:
+
+Jitsi Meet self-hosted Cascaded Bridge.
+
+Hi, I am currently having an issue with my current setup. It appears that when someone stops his screen sharing and starts a new one, only users on the same JVB can see it. To make it again visible to other users, this user has to reconnect to the room. Or users on different JVB have to reconnect to the room.
+All logs from the different servers don't seem to indicate any error.
+
+Setup:
+
+Server A :
+- JMS
+- Jicofo
+- Prosody
+- JVB-0
+
+Server B:
+- JVB-1
+
+Server C:
+- JVB-2
+
+I am using JWT token authentication and websocket protocol.
+
+Jicofo uses SplitBridgeSelectionStrategy to split users on different JVB for one room.
+
+### Steps to reproduce:
+
+1.  Connect 8 peoples on the same room : ROOM1
+2.  USER-1 is on JVB-0
+    USER-2 is on JVB-1
+    USER-3 is on JVB-2
+    USER-4 is on JVB-0
+    USER-5 is on JVB-1
+    USER-6 is on JVB-2
+3.  All users start to screen sharing. Everythings works as intended, everyone can see everyone's screen sharing.
+4.  USER-1 on JVB-0 stops his screen sharing. Now every other user can see the screen sharing of USER-1.
+5.  USER-1 starts screen sharing. Now only USER-4 on JVB-0 can see the screen sharing.
+
+For other users who are not on JVB-0, to be able the screen sharing of USER-1, there are two case:
+- Case 1:
+    USER-1 has to logout. And login back to ROOM1. And start a new screen sharing.
+- Case 2:
+    Users on JVB-1 and JVB-2 have to logout. And login back to ROOM1.
+
+### Expected behavior:
+
+If a user on a specific JVB stops his screen sharing and starts a new one. Every other user on a different JVB should be able to see the screen sharing.
+
+### Actual behavior:
+
+Only users on the same JVB can see the screen sharing
+
+### Server information:
+
+Server A:
+
+- Jitsi Meet version:
+
+* jicofo 1.0+763-1
+* jitsi-meet 1.0.5096-1
+* jitsi-meet-prosody 1.0.5096-1
+* jitsi-meet-turnserver 1.0.5096-1
+* jitsi-videobridge 2.1+518+g2a0848b8-1
+
+- Operating System:
+
+* 5.12.13-arch1-2
+
+Server B:
+
+* jitsi-videobridge 2.1+518+g2a0848b8-1
+
+- Operating System:
+
+* 5.12.13-arch1-2
+
+Server C:
+
+* jitsi-videobridge 2.1+518+g2a0848b8-1
+
+- Operating System:
+
+* 5.12.13-arch1-2
+
+### Client information:
+
+- Browser / app version:
+
+* Google Chrome Version 91.0.4472.114
+
+- Operating System:
+
+* 5.12.13-arch1-2
+
+### Additional information:
+
+Server A configs :
+
+* Jicofo
+
+  - [config](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jicofo/config.txt)
+  - [jicofo.conf](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jicofo/jicofo.conf)
+  - [sip-communicator.properties](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jicofo/sip-communicator.properties)
+
+* Jitsi Meet
+
+  - [config.js](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jitsi-meet/config.js)
+
+* Prosody
+
+  - [<FQDN>.cfg.lua](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/prosody/conf.d/FQDN.cfg.lua)
+
+* JVB
+
+
+Server B config:
+
+* JVB
+
+Server C config:
+
+* JVB
+
