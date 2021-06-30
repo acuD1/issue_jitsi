@@ -7,17 +7,17 @@ All logs from the different servers don't seem to indicate any error.
 
 Setup:
 
-Server A :
-- JMS
-- Jicofo
-- Prosody
-- JVB-0
+* Server A :
+  - JMS
+  - Jicofo
+  - Prosody
+  - JVB-0
 
-Server B:
-- JVB-1
+* Server B:
+  - JVB-1
 
-Server C:
-- JVB-2
+* Server C:
+  - JVB-2
 
 I am using JWT token authentication and websocket protocol.
 
@@ -36,7 +36,7 @@ Jicofo uses SplitBridgeSelectionStrategy to split users on different JVB for one
 4.  USER-1 on JVB-0 stops his screen sharing. Now every other user can see the screen sharing of USER-1.
 5.  USER-1 starts screen sharing. Now only USER-4 on JVB-0 can see the screen sharing.
 
-For other users who are not on JVB-0, to be able the screen sharing of USER-1, there are two case:
+For other users who are not on JVB-0, to be able to see the screen sharing of USER-1, there are two cases:
 - Case 1:
     USER-1 has to logout. And login back to ROOM1. And start a new screen sharing.
 - Case 2:
@@ -56,41 +56,45 @@ Server A:
 
 - Jitsi Meet version:
 
-* jicofo 1.0+763-1
-* jitsi-meet 1.0.5096-1
-* jitsi-meet-prosody 1.0.5096-1
-* jitsi-meet-turnserver 1.0.5096-1
-* jitsi-videobridge 2.1+518+g2a0848b8-1
+  - jicofo 1.0+763-1
+  - jitsi-meet 1.0.5096-1
+  - jitsi-meet-prosody 1.0.5096-1
+  - jitsi-meet-turnserver 1.0.5096-1
+  - jitsi-videobridge 2.1+518+g2a0848b8-1
 
 - Operating System:
 
-* 5.12.13-arch1-2
+  - 5.12.13-arch1-2
 
 Server B:
 
-* jitsi-videobridge 2.1+518+g2a0848b8-1
+- Jitsi Meet version:
+
+  - jitsi-videobridge 2.1+518+g2a0848b8-1
 
 - Operating System:
 
-* 5.12.13-arch1-2
+  - 5.12.13-arch1-2
 
 Server C:
 
-* jitsi-videobridge 2.1+518+g2a0848b8-1
+- Jitsi Meet version:
+
+  - jitsi-videobridge 2.1+518+g2a0848b8-1
 
 - Operating System:
 
-* 5.12.13-arch1-2
+  - 5.12.13-arch1-2
 
 ### Client information:
 
 - Browser / app version:
 
-* Google Chrome Version 91.0.4472.114
+  - Google Chrome Version 91.0.4472.114
 
 - Operating System:
 
-* 5.12.13-arch1-2
+  - 5.12.13-arch1-2
 
 ### Additional information:
 
