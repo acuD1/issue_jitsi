@@ -112,12 +112,23 @@ Server A configs :
 
 * JVB
 
+  - [config](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jvb0/config)
+  - [jvb.conf](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jvb0/jvb.conf)
+  - [sip-communicator.properties](https://github.com/acuD1/issue_jitsi/blob/master/ServerA/jvb0/sip-communicator.properties)
+
 
 Server B config:
 
 * JVB
 
+  - [config](https://github.com/acuD1/issue_jitsi/blob/master/ServerB/jvb1/config)
+  - [jvb.conf](https://github.com/acuD1/issue_jitsi/blob/master/ServerB/jvb1/jvb.conf)
+  - [sip-communicator.properties](https://github.com/acuD1/issue_jitsi/blob/master/ServerB/jvb1/sip-communicator.properties)
+
 Server C config:
 
 * JVB
 
+  - [config](https://github.com/acuD1/issue_jitsi/blob/master/ServerC/jvb2/config)
+  - [jvb.conf](https://github.com/acuD1/issue_jitsi/blob/master/ServerC/jvb2/jvb.conf)
+  - [sip-communicator.properties](https://github.com/acuD1/issue_jitsi/blob/master/ServerC/jvb2/sip-communicator.properties)
